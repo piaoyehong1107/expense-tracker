@@ -9,6 +9,9 @@ export const AddTransaction = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
+    setText("");
+    setAmount("");
+
     const newTransaction = {
       id: Math.floor(Math.random() * 100000000),
       text: text,
@@ -36,7 +39,7 @@ export const AddTransaction = () => {
             (negative - expense, positive - income)
           </label>
           <input
-            type="numner"
+            type="number"
             value={amount}
             onChange={(e) => setAmount(e.target.value)}
             placeholder="Enter amount ..."
